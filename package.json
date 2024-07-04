@@ -1,0 +1,21 @@
+{
+  "name": "shortenlink-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "18.20.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.4",
+    "validator": "^13.12.0",
+    "visa2discord": "^1.1.2"
+  }
+}
