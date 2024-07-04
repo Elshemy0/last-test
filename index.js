@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 app.get("/:link", async (req, res) => {
   const { link } = req.params;
-  const data = await db.findOne({ shortUrl: `${req.protocol}://${req.headers.host}/${link}` });
+  const data = await db.findOne({ shortUrl: `https://${req.headers.host}/${link}` });
   if (!data) {
     res.status(400).json({ status: "this is a invalid url" });
   } else {
@@ -48,7 +48,7 @@ app.post("/api", async (req, res) => {
 
     while (isShortUsed) {
       short = await getShort();
-      shortUrl = `${req.protocol}://${req.headers.host}/${short}`;
+      shortUrl = `https://${req.headers.host}/${short}`;
       isShortUsed = await db.findOne({ shortUrl });
     }
 
